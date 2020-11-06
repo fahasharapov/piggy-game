@@ -1,3 +1,7 @@
+:root{
+	--myBorder: 1px solid black;
+};
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -6,7 +10,7 @@ html, body {
 
 
 body {
-	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(img/piggy-bg-2.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .5)), url(img/piggy-bg-2.jpg);
 	height: 100vh;
 	width: 100%; 
     background-size: cover;
@@ -14,10 +18,72 @@ body {
     background-attachment: fixed;
 }
 
+div {
+	color: #000;
+}
+
 .main-container {
-	border: 1px solid white;
+	border: 1px solid red;
 	width: 650px;
 	height: 600px;
 	margin-top: 10px;
 	margin-left: 10px;
+	background-color: #FEE8F8;
+	border-radius: 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 'left-column right-column';
+	overflow: hidden;
+
 }
+
+
+
+.active-section {
+	grid-area: left-column;
+	background-color: #FFC0CB;
+}
+
+
+.name-section {
+	border: var(--myBorder);
+	height: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+}
+
+.names {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.score {
+	font-size: 60px;
+	color: red;
+	text-align: center;
+}
+
+.total-score {
+	border: 1px solid black;
+	width: 50%;
+	margin: 0 auto;
+	padding: 15px;
+	border-radius: 10%;
+	color: green;
+	text-align: center;
+	font-size: 40px;
+}
+
+.dice-section {
+	margin: 0 auto;
+}
+
+.dice-section img {
+	width: 75px;
+	height: 75px;
+}
+
