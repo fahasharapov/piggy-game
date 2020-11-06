@@ -16,27 +16,33 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family: 'Syne Mono', monospace;
 }
 
 div {
 	color: #000;
 }
 
-.main-container {
-	border: 1px solid red;
+
+.main-container {/*
+	border: 1px solid red;*/
 	width: 650px;
 	height: 600px;
 	margin-top: 10px;
 	margin-left: 10px;
-	background-color: #FEE8F8;
 	border-radius: 40px;
+	overflow: hidden;	
+	background-color: #ffeee6;
+}
+
+.section-wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 'left-column right-column';
 	overflow: hidden;
-
+	border-bottom: 1px solid gray;
+	background-color: #FEE8F8;
 }
-
 
 
 .active-section {
@@ -45,8 +51,8 @@ div {
 }
 
 
-.name-section {
-	border: var(--myBorder);
+.name-section {/*
+	border: var(--myBorder);*/
 	height: 100%;
 	max-width: 100%;
 	display: flex;
@@ -68,22 +74,58 @@ div {
 }
 
 .total-score {
-	border: 1px solid black;
 	width: 50%;
 	margin: 0 auto;
 	padding: 15px;
 	border-radius: 10%;
-	color: green;
+	color: white;
 	text-align: center;
-	font-size: 40px;
+	font-size: 30px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	background-color: #F74C6E;
+}
+
+
+.section-wrapper-2 {
+	background-color: #ffeee6;
+	overflow: auto;
 }
 
 .dice-section {
-	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-top: 10px;
+	background-color: #ffeee6;
+	/*
+	border: 1px solid black;*/
+
 }
 
 .dice-section img {
 	width: 75px;
 	height: 75px;
+	margin: 0 auto;
 }
+
+.button-section {
+	background-color: #ffeee6;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 28px;
+}
+
+.hold,
+.roll,
+.new-game {
+	border: 1px solid black;
+	text-align: center;
+	padding: 7px;
+	border-radius: 5px;
+}
+
 
