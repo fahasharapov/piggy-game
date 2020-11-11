@@ -3,10 +3,12 @@
 //Random number generator that changes the dice image and the Score section
 
 
-var sum = 0;
+var sum = [0,0];
 var dice;
+var activePlayer = 0;
 
 
+//perform an operation when Roll button is clicked
 document.querySelector('.roll').addEventListener('click', function(){	
 		//generates the random number
 		dice = Math.floor(Math.random() * 6) + 1;
@@ -27,13 +29,13 @@ document.querySelector('.roll').addEventListener('click', function(){
 		sum = sum + dice;
 
 		//changes the score-0 section textContent
-		document.querySelector('.score-0').textContent = sum;
+		document.querySelector('.score-' + activePlayer).textContent = sum;
 	} else {
 
 		//if the dice is a number 3, then it runs the below script
 
 		//sets the score-0 textContent to a 0
-		document.querySelector('.score-0').textContent = '0';
+		document.querySelector('.score-' + activePlayer).textContent = '0';
 
 		//image display gets hidden
 		document.querySelector('.dice').style.display = "none";
@@ -42,7 +44,10 @@ document.querySelector('.roll').addEventListener('click', function(){
 		document.querySelector('.left-column').classList.remove('active-section');
 
 		//telling the right column to inherit the left column's style - active section
-		document.querySelector('.right-column').classList.add('active-section');	
+		document.querySelector('.right-column').classList.add('active-section');
+
+		//next player
+		nextPlayer();	
 	}
 })
 
@@ -50,6 +55,27 @@ document.querySelector('.roll').addEventListener('click', function(){
 //Hold Button
 //Upon clicking Hold, do the following:
 //1. Store the sum in the Total section
+
+
+//2. Clear the sum
+
+
+
+
+//Change the active player
+
+function nextPlayer(){
+
+	sum = 0;
+
+	activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+
+
+	document.querySelector('.left-column').classList.remove('active-section');
+	document.querySelector('.right-column').classList.add('active-section');
+	
+
+}
 
 
 
